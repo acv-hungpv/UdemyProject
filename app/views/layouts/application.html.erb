@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FirstTranining</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% render 'layouts/messages' %>
+    <% flash.each do |name,msg| %>
+      <%= content_tag :div, msg %>
+    <% end %>
+    <%= render 'layouts/navigation' %>
+    <h1> Test CSS</h1>
+    <div class="container">    
+      <%= yield %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+table
+	- @products.each do |product|
+		tr.products
+			td = product.title
+			td = product.price
+			td = product.category.try(:name)
+			td = product.price
+			td = link_to('Read more', product_path(product))
+			td = link_to('Edit',edit_product_path(product))
+			td = link_to('Delete', product_path(product),method: :delete, data: { confirm: 'are you sure to delete this product?'})
+= link_to('create',new_product_path)
+
+
