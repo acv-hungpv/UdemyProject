@@ -20721,3 +20721,119 @@ Processing by ChefsController#show as HTML
 Completed 200 OK in 45ms (Views: 40.1ms | ActiveRecord: 1.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-30 15:20:40 +0700
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chefs" for 127.0.0.1 at 2018-05-30 15:20:43 +0700
+Processing by ChefsController#index as HTML
+  Rendering chefs/index.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.5ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "chefs"[0m
+  ↳ app/views/chefs/index.html.erb:4
+  [1m[36mChef Load (0.9ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/chefs/index.html.erb:5
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 1]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 2]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 3]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 4]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 5]]
+  ↳ app/views/chefs/index.html.erb:11
+  Rendered chefs/index.html.erb within layouts/application (29.3ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+Completed 200 OK in 66ms (Views: 58.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/chefs" for 127.0.0.1 at 2018-05-30 15:57:14 +0700
+Processing by ChefsController#index as HTML
+  Rendering chefs/index.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "chefs"[0m
+  ↳ app/views/chefs/index.html.erb:4
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/chefs/index.html.erb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 1]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 2]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 3]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 4]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 5]]
+  ↳ app/views/chefs/index.html.erb:11
+  Rendered chefs/index.html.erb within layouts/application (34.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+Completed 200 OK in 87ms (Views: 71.5ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/chefs/3" for 127.0.0.1 at 2018-05-30 15:57:29 +0700
+Processing by ChefsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mChef Load (0.6ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/chefs_controller.rb:23
+  Rendering chefs/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.4ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 3]]
+  ↳ app/views/chefs/show.html.erb:12
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."chef_id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["chef_id", 3], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/recipes/_recipe.html.erb:1
+  Rendered recipes/_recipe.html.erb (4.6ms)
+  Rendered chefs/show.html.erb within layouts/application (10.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+Completed 200 OK in 49ms (Views: 42.4ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/chefs/1" for 127.0.0.1 at 2018-05-30 15:58:04 +0700
+Processing by ChefsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6Cn41/LpBWf4pAY2WdfIrXttBPx3UjbaauDMjSEhuZSmIuci8QRMHUV+5VgoegaRJX/njteR/fKXy0d6x7gtFg==", "id"=>"1"}
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/chefs_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/chefs_controller.rb:43
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."chef_id" = $1 ORDER BY "recipes"."updated_at" DESC[0m  [["chef_id", 1]]
+  ↳ app/controllers/chefs_controller.rb:43
+  [1m[36mChef Destroy (0.3ms)[0m  [1m[31mDELETE FROM "chefs" WHERE "chefs"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/chefs_controller.rb:43
+  [1m[35m (15.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/chefs_controller.rb:43
+Redirected to http://localhost:3000/chefs
+Completed 302 Found in 22ms (ActiveRecord: 17.1ms)
+
+
+Started GET "/chefs" for 127.0.0.1 at 2018-05-30 15:58:04 +0700
+Processing by ChefsController#index as HTML
+  Rendering chefs/index.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "chefs"[0m
+  ↳ app/views/chefs/index.html.erb:4
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/chefs/index.html.erb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 2]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 3]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 4]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 5]]
+  ↳ app/views/chefs/index.html.erb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 6]]
+  ↳ app/views/chefs/index.html.erb:11
+  Rendered chefs/index.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.8ms)
+Completed 200 OK in 50ms (Views: 45.3ms | ActiveRecord: 3.8ms)
+
+
