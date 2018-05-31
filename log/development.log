@@ -26044,3 +26044,47 @@ Migrating to CreateRecipeIngredients (20180531092206)
   [1m[36mRecipeIngredient Create (0.4ms)[0m  [1m[32mINSERT INTO "recipe_ingredients" ("recipe_id", "ingredient_id") VALUES ($1, $2) RETURNING "id"[0m  [["recipe_id", 1], ["ingredient_id", 1]]
   [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mRecipeIngredient Load (0.4ms)[0m  [1m[34mSELECT "recipe_ingredients".* FROM "recipe_ingredients"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3685795279006499820)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20180531101358)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (70.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "description" text, "chef_id" integer, "recipe_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180531101358_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180531101358"]]
+  ↳ bin/rails:9
+  [1m[35m (19.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3685795279006499820)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" ORDER BY "chefs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."updated_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("description", "chef_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "great recipe, i love it"], ["chef_id", 2], ["recipe_id", 7], ["created_at", "2018-05-31 10:25:09.478972"], ["updated_at", "2018-05-31 10:25:09.478972"]]
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 7]]
+  [1m[36mChef Load (0.8ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" ORDER BY "chefs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."chef_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["chef_id", 8]]
+  [1m[36mChef Load (0.9ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" ORDER BY "chefs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mChef Load (0.8ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" ORDER BY "chefs"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."chef_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["chef_id", 8]]
+  [1m[36mChef Load (0.8ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" ORDER BY "chefs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."updated_at" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("description", "chef_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "great recipe1, i love it"], ["chef_id", 2], ["recipe_id", 7], ["created_at", "2018-05-31 10:27:05.106212"], ["updated_at", "2018-05-31 10:27:05.106212"]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."chef_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["chef_id", 2]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("description", "chef_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "another comment"], ["chef_id", 2], ["recipe_id", 7], ["created_at", "2018-05-31 10:29:56.383302"], ["updated_at", "2018-05-31 10:29:56.383302"]]
+  [1m[35m (19.0ms)[0m  [1m[35mCOMMIT[0m

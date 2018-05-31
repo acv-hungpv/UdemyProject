@@ -8,5 +8,6 @@ class Chef < ApplicationRecord
 
   has_many :recipes, dependent: :destroy #test "associated recipes should be destroyed"  for destroy
   has_secure_password
+  has_many :comments, dependent: :destroy
   validates :password, presence: true, length: { minimum: 5}, allow_nil: true
 end
