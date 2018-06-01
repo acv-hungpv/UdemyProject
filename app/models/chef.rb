@@ -10,4 +10,5 @@ class Chef < ApplicationRecord
   has_secure_password
   has_many :comments, dependent: :destroy
   validates :password, presence: true, length: { minimum: 5}, allow_nil: true
+  has_many :messages, dependent: :destroy
 end
