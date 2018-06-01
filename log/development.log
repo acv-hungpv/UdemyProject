@@ -30899,3 +30899,932 @@ Processing by RecipesController#show as HTML
 Completed 200 OK in 61ms (Views: 52.4ms | ActiveRecord: 4.3ms)
 
 
+Started GET "/recipes/" for 127.0.0.1 at 2018-06-01 09:27:50 +0700
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/recipes/_recipe.html.erb:1
+  [1m[36mChef Load (0.6ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 7], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 6]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 5]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  Rendered recipes/_recipe.html.erb (35.2ms)
+  Rendered recipes/index.html.erb within layouts/application (40.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (2.3ms)
+Completed 200 OK in 79ms (Views: 69.3ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at 2018-06-01 09:40:02 +0700
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/recipes/_recipe.html.erb:1
+  [1m[36mChef Load (0.6ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 7], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 6]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 5]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  Rendered recipes/_recipe.html.erb (89.0ms)
+  Rendered recipes/index.html.erb within layouts/application (102.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (5.1ms)
+Completed 200 OK in 144ms (Views: 112.7ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-06-01 09:40:08 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (31.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (2.7ms)
+Completed 200 OK in 107ms (Views: 62.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-06-01 09:40:12 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vl07b/bbG8KlBSgl02sfw9GA4HAsUY+DC9LDQAQyzXodwihRsS6i8x73g+ay5u26YZOSVucwLoMNVqRhCMYfdQ==", "session"=>{"email"=>"phanvanhunglmlm@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mChef Load (0.7ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."email" = $1 LIMIT $2[0m  [["email", "phanvanhunglmlm@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+Redirected to http://localhost:3000/chefs/2
+Completed 302 Found in 157ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/chefs/2" for 127.0.0.1 at 2018-06-01 09:40:12 +0700
+Processing by ChefsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/chefs_controller.rb:56
+  Rendering chefs/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 2]]
+  ↳ app/views/chefs/show.html.erb:9
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."chef_id" = $1[0m  [["chef_id", 2]]
+  ↳ app/views/chefs/show.html.erb:12
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."chef_id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["chef_id", 2], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/recipes/_recipe.html.erb:1
+  [1m[36mIngredient Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 7], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mIngredient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 6]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 5]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  Rendered recipes/_recipe.html.erb (29.5ms)
+  Rendered chefs/show.html.erb within layouts/application (35.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (2.5ms)
+Completed 200 OK in 69ms (Views: 55.9ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/recipes/11" for 127.0.0.1 at 2018-06-01 09:40:18 +0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.5ms)
+  [1m[36mIngredient Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.6ms)
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered comments/_comments.html.erb (4.2ms)
+  Rendered recipes/show.html.erb within layouts/application (41.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (2.6ms)
+Completed 200 OK in 85ms (Views: 65.3ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/recipes/11" for 127.0.0.1 at 2018-06-01 09:41:51 +0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  [1m[36mIngredient Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.7ms)
+  [1m[36mChef Load (0.6ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered comments/_comments.html.erb (6.4ms)
+  Rendered recipes/show.html.erb within layouts/application (19.8ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (3.0ms)
+Completed 200 OK in 65ms (Views: 56.1ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/recipes/11" for 127.0.0.1 at 2018-06-01 09:43:51 +0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.5ms)
+  [1m[36mIngredient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.9ms)
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered comments/_comments.html.erb (3.1ms)
+  Rendered recipes/show.html.erb within layouts/application (51.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (2.5ms)
+Completed 200 OK in 119ms (Views: 72.6ms | ActiveRecord: 22.3ms)
+
+
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 09:44:30 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S8swSea3ki6fVFNfLGcO86Op+WQfnqZLTxfw5aS7vmsZCS1ndBcavGLvwGm5ANz+Rqj6RgMR0TzO53/kOeIkjw==", "comment"=>{"description"=>"hungphan comments"}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mRecipe Load (2.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4
+No template found for CommentsController#create, rendering head :no_content
+Completed 204 No Content in 42546ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/recipes/11" for 127.0.0.1 at 2018-06-01 09:57:05 +0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  [1m[36mIngredient Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.6ms)
+  [1m[36mChef Load (0.6ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  Rendered comments/_comments.html.erb (4.1ms)
+  Rendered recipes/show.html.erb within layouts/application (52.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (3.2ms)
+Completed 200 OK in 159ms (Views: 105.8ms | ActiveRecord: 26.6ms)
+
+
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 09:57:12 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XDvWWlccdy5dZUIceAryTGqToCvFB6CWWjGVRDQQyisO+ct0xbz/vKDe0SrtbSBBj5KjCdmI1+HbwRpFqUlQzw==", "comment"=>{"description"=>"trying again"}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("description", "chef_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "trying again"], ["chef_id", 2], ["recipe_id", 11], ["created_at", "2018-06-01 02:57:12.598147"], ["updated_at", "2018-06-01 02:57:12.598147"]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (24.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to http://localhost:3000recipes/show
+Completed 302 Found in 39ms (ActiveRecord: 25.8ms)
+
+
+Started GET "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 09:57:28 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/recipes/11/comments"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/recipes/11/" for 127.0.0.1 at 2018-06-01 09:58:46 +0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.6ms)
+  [1m[36mIngredient Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.9ms)
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  [1m[36mChef Load (0.7ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (5.5ms)
+  Rendered comments/_comments.html.erb (9.5ms)
+  Rendered recipes/show.html.erb within layouts/application (85.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (3.8ms)
+Completed 200 OK in 471ms (Views: 414.7ms | ActiveRecord: 22.6ms)
+
+
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 09:58:59 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"34CZzFfIDyriKVwoFuXuK+v1TAkNfqnZHgUiA2sSfSGNQoTixWiHuB+Szx6DgjwmDvRPKxHx3q6f9a0C9kvnxQ==", "comment"=>{"description"=>"try comment "}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.6ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("description", "chef_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "try comment "], ["chef_id", 2], ["recipe_id", 11], ["created_at", "2018-06-01 02:58:59.655501"], ["updated_at", "2018-06-01 02:58:59.655501"]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to http://localhost:3000recipes/show
+Completed 302 Found in 18ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/recipes/11/comment" for 127.0.0.1 at 2018-06-01 09:59:34 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/recipes/11/comment"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 09:59:43 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/recipes/11/comments"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:00:20 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/recipes/11/comments"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:00:28 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"34CZzFfIDyriKVwoFuXuK+v1TAkNfqnZHgUiA2sSfSGNQoTixWiHuB+Szx6DgjwmDvRPKxHx3q6f9a0C9kvnxQ==", "comment"=>{"description"=>"try comment "}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("description", "chef_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "try comment "], ["chef_id", 2], ["recipe_id", 11], ["created_at", "2018-06-01 03:00:28.786541"], ["updated_at", "2018-06-01 03:00:28.786541"]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to http://localhost:3000recipes/show
+Completed 302 Found in 101ms (ActiveRecord: 24.7ms)
+
+
+Started GET "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:05:05 +0700
+Started GET "/recipes/11/" for 127.0.0.1 at 2018-06-01 10:05:15 +0700
+Started GET "/recipes/11/" for 127.0.0.1 at 2018-06-01 10:05:15 +0700
+Started GET "/recipes/11/" for 127.0.0.1 at 2018-06-01 10:05:15 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/recipes/11/comments"):
+  
+actionpack (5.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.0) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.0) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.0) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.0) lib/rails/engine.rb:524:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Processing by RecipesController#show as HTML
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  [1m[36mRecipe Load (7.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.0ms)
+  [1m[36mIngredient Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (1.2ms)
+  [1m[36mIngredient Load (6.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.3ms)
+  [1m[36mChef Load (1.5ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mChef Load (19.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.1ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (4.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[36mComment Load (6.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (4.6ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.6ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.1ms)
+  Rendered comments/_comments.html.erb (14.4ms)
+  Rendered recipes/show.html.erb within layouts/application (104.8ms)
+  [1m[36mComment Load (7.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.7ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.7ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.5ms)
+  Rendered comments/_comments.html.erb (316.3ms)
+  Rendered recipes/show.html.erb within layouts/application (415.0ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  [1m[36mIngredient Load (1.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (7.8ms)
+  Rendered layouts/_navigation.html.erb (6.5ms)
+Completed 200 OK in 709ms (Views: 619.8ms | ActiveRecord: 56.9ms)
+
+
+Completed 200 OK in 709ms (Views: 635.1ms | ActiveRecord: 48.7ms)
+
+
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.0ms)
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.3ms)
+  [1m[36mChef Load (0.5ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (4.4ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.0ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (0.8ms)
+  Rendered comments/_comments.html.erb (11.1ms)
+  Rendered recipes/show.html.erb within layouts/application (66.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (2.4ms)
+Completed 200 OK in 142ms (Views: 85.7ms | ActiveRecord: 21.5ms)
+
+
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:05:22 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tK+DojVh5f+7FsbJ8s50neZalBWucZmLEUuF3+9tGG3mbZ6Mp8FtbUatVf9nqaaQA1uXN7L+7vyQuwrecjSCiQ==", "comment"=>{"description"=>"try comment"}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("description", "chef_id", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "try comment"], ["chef_id", 2], ["recipe_id", 11], ["created_at", "2018-06-01 03:05:22.036300"], ["updated_at", "2018-06-01 03:05:22.036300"]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to http://localhost:3000/recipes/11
+Completed 302 Found in 25ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/recipes/11" for 127.0.0.1 at 2018-06-01 10:05:22 +0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (1.0ms)
+  [1m[36mIngredient Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.8ms)
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.9ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (2.4ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.9ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.4ms)
+  Rendered comments/_comments.html.erb (14.5ms)
+  Rendered recipes/show.html.erb within layouts/application (29.5ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (4.4ms)
+Completed 200 OK in 62ms (Views: 55.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:06:46 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5LZXe9JIIGPU3NhMtJ2sprTAI1BoVb0RRLkk/UHsDUq2dEpVQOio8SlnS3oh+n6rUcEgcnTaymbFSav83LWXrg==", "comment"=>{"description"=>""}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.6ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:8
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.3ms)
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.6ms)
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  Rendered comments/_comments.html.erb (2.3ms)
+  Rendered recipes/show.html.erb within layouts/application (28.9ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 16.2ms)
+
+
+
+ArgumentError - The @comments variable appears to be empty. Did you forget to pass the collection object for will_paginate?:
+  app/views/comments/_comments.html.erb:2:in `_app_views_comments__comments_html_erb___1167761763841907032_69896645200620'
+  app/views/recipes/show.html.erb:64:in `_app_views_recipes_show_html_erb___151349765423246054_69896644488860'
+  app/controllers/comments_controller.rb:13:in `create'
+
+Started POST "/__better_errors/29d51fed18ae7a5a/variables" for 127.0.0.1 at 2018-06-01 10:06:46 +0700
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:08:14 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5LZXe9JIIGPU3NhMtJ2sprTAI1BoVb0RRLkk/UHsDUq2dEpVQOio8SlnS3oh+n6rUcEgcnTaymbFSav83LWXrg==", "comment"=>{"description"=>""}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to 
+Completed 500 Internal Server Error in 596ms (ActiveRecord: 15.9ms)
+
+
+
+NoMethodError - undefined method `back_url' for #<CommentsController:0x00007f242dff6240>:
+  app/controllers/comments_controller.rb:13:in `create'
+
+Started POST "/__better_errors/ac1e2c5b5d0fa454/variables" for 127.0.0.1 at 2018-06-01 10:08:14 +0700
+Started GET "/recipes/11/" for 127.0.0.1 at 2018-06-01 10:09:10 +0700
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:53
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.4ms)
+  [1m[36mIngredient Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:6
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:7
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (1.1ms)
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:14
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/show.html.erb:59
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/comments/_comments.html.erb:2
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1 ORDER BY "comments"."updated_at" DESC LIMIT $2 OFFSET $3[0m  [["recipe_id", 11], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/comments/_comments.html.erb:4
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (3.2ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.1ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.1ms)
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:4
+  Rendered comments/_comment.html.erb (1.2ms)
+  Rendered comments/_comments.html.erb (12.9ms)
+  Rendered recipes/show.html.erb within layouts/application (77.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (3.1ms)
+Completed 200 OK in 142ms (Views: 101.3ms | ActiveRecord: 17.7ms)
+
+
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:09:12 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8oPW3Mu9dfd/qsTMgyyxOCCjy+jo+uXb0QJEOpCmL+6gQcvyWR39ZYIRV/oWS2M1xaLIyvR1kqxQ8ss7Df+1Cg==", "comment"=>{"description"=>""}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.4ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to 
+Completed 500 Internal Server Error in 402ms (ActiveRecord: 1.2ms)
+
+
+
+NoMethodError - undefined method `back_url' for #<CommentsController:0x00007f24344e3ae0>:
+  app/controllers/comments_controller.rb:13:in `create'
+
+Started POST "/__better_errors/fc8049ad0e2cbb60/variables" for 127.0.0.1 at 2018-06-01 10:09:13 +0700
+Started POST "/recipes/11/comments" for 127.0.0.1 at 2018-06-01 10:11:00 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8oPW3Mu9dfd/qsTMgyyxOCCjy+jo+uXb0QJEOpCmL+6gQcvyWR39ZYIRV/oWS2M1xaLIyvR1kqxQ8ss7Df+1Cg==", "comment"=>{"description"=>""}, "commit"=>"Submit  Comment", "recipe_id"=>"11"}
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 ORDER BY "recipes"."updated_at" DESC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/comments_controller.rb:8
+Redirected to http://localhost:3000/
+Completed 302 Found in 43ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-01 10:11:00 +0700
+Processing by PagesController#home as HTML
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2018-06-01 10:11:00 +0700
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  Rendered shared/_page_title.html.erb (0.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" ORDER BY "recipes"."updated_at" DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/recipes/_recipe.html.erb:1
+  [1m[36mChef Load (0.3ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 11], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 11]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 7], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:12
+  Rendered collection of ingredients/_ingredient.html.erb [2 times] (0.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 7]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 6], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 6]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 5], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 5]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  [1m[36mCACHE Chef Load (0.0ms)[0m  [1m[34mSELECT  "chefs".* FROM "chefs" WHERE "chefs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:5
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" INNER JOIN "recipe_ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "recipe_ingredients"."recipe_id" = $1 LIMIT $2[0m  [["recipe_id", 4], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipe.html.erb:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 4]]
+  ↳ app/views/recipes/_recipe.html.erb:17
+  Rendered recipes/_recipe.html.erb (54.2ms)
+  Rendered recipes/index.html.erb within layouts/application (58.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/views/layouts/_navigation.html.erb:37
+  Rendered layouts/_navigation.html.erb (3.1ms)
+Completed 200 OK in 92ms (Views: 78.7ms | ActiveRecord: 11.8ms)
+
+

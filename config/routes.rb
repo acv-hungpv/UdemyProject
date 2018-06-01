@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :todos
   resources :products
   resources :pages
-  resources :recipes
+  resources :recipes do 
+    resources :comments, only: [:create]
+  end
   resources :ingredients, except: [:destroy]
   
   get '/signup', to: 'chefs#new'
